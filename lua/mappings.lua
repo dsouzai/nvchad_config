@@ -1,3 +1,6 @@
+-- Need to do this before nvchad mappings
+vim.keymap.set('n', '<C-n>', '<tab>', { desc = 'Go to N newer entry in jump list' })
+
 require "nvchad.mappings"
 
 -- add yours here
@@ -19,13 +22,14 @@ map("n", "<leader>tv", ":NvimTreeToggle<Enter>", { desc = "Toggle treeview" })
 map("n", "<leader>tf", ":NvimTreeFocus<ENter>", { desc = "Focus on treeview "})
 
 local lb = vim.lsp.buf
-map("n", "gd", function() lb.definition() end, opts)
-map("n", "gD", function() lb.declaration() end, opts)
-map("n", "gt", function() lb.type_definition() end, opts)
+map("n", "gd", builtin.lsp_definitions, { desc = "Go to definition under cursor" })
+map("n", "gD", function() lb.declaration() end, { desc = "Go to declaration under cursor" })
+map("n", "gt", function() lb.type_definition() end, { desc = "Go to type definition under cursor" })
+map("n", "gr", builtin.lsp_references, { desc = "Open a telescope window with references" })
 
 -- insert mode
 map("i", "<M-b>", "<Esc>bi", { desc = "Move one word back" })
-map("i", "<M-f>", "<Esc>wwi", { desc = "Move one word forward" })
+map("i", "<M-f>", "<Esc>lwi", { desc = "Move one word forward" })
 
 
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
