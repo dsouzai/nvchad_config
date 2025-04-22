@@ -15,6 +15,13 @@ map('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
 map('n', 'gs', builtin.grep_string, { desc = 'Telescope grep string' })
 map('n', 'gd', builtin.lsp_definitions, { desc = 'Go to definition under cursor' })
 map('n', 'gr', builtin.lsp_references, { desc = 'Open a telescope window with references' })
+map('n', '<leader>gd',
+   function()
+      require('telescope.builtin').diagnostics({ bufnr= 0})
+   end
+   , { desc = 'Telescope list diagnostics in current buffer'})
+map('n', 'gi', builtin.lsp_incoming_calls, { desc = 'Telescope list incoming calls' })
+map('n', 'go', builtin.lsp_outgoing_calls, { desc = 'Telescope list outgoing calls' })
 
 map('n', ';', ':', { desc = 'CMD enter command mode' })
 map('n', '<leader>c/', '/<Bslash>c', { desc = 'Case-insensitive forward search' })
