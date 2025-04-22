@@ -11,72 +11,6 @@ return {
         config = function()
             require "configs.lspconfig"
         end,
-        opts = {
-            servers = {
-                -- Ensure mason installs the server
-                clangd = {
-                    keys = {
-                        { "<leader>ch", "<cmd>ClangdSwitchSourceHeader<cr>", desc = "Switch Source/Header (C/C++)" },
-                    },
-                    root_dir = function(fname)
-                        return require("lspconfig.util").root_pattern(
-                            "Makefile",
-                            "configure.ac",
-                            "configure.in",
-                            "config.h.in",
-                            "meson.build",
-                            "meson_options.txt",
-                            "build.ninja"
-                        )(fname) or require("lspconfig.util").root_pattern("compile_commands.json", "compile_flags.txt")(
-                                fname
-                            ) or require("lspconfig.util").find_git_ancestor(fname)
-                    end,
-                    capabilities = {
-                        offsetEncoding = { "utf-16" },
-                    },
-                    cmd = {
-                        "clangd",
-                        "--background-index",
-                        "--header-insertion=never",
-                        "--completion-style=detailed",
-                        "--fallback-style=llvm",
-                    },
-                    init_options = {
-                        usePlaceholders = true,
-                        completeUnimported = true,
-                        clangdFileStatus = true,
-                    },
-                },
-                rust_analyzer = {
-                    cmd = { "rust-analyzer" },
-                    settings = {
-                        ["rust-analyzer"] = {
-                            imports = {
-                                granularity = {
-                                    group = "module",
-                                },
-                                prefix = "self",
-                            },
-                            cargo = {
-                                buildScripts = {
-                                    enable = true,
-                                },
-                            },
-                            procMacro = {
-                                enable = true,
-                            },
-                        },
-                    },
-                },
-            },
-            setup = {
-                clangd = function(_, opts)
-                    local clangd_ext_opts = LazyVim.opts("clangd_extensions.nvim")
-                    require("clangd_extensions").setup(vim.tbl_deep_extend("force", clangd_ext_opts or {}, { server = opts }))
-                    return false
-                end,
-            },
-        },
     },
 
     {
@@ -91,7 +25,7 @@ return {
         config = function() end,
         opts = {
             inlay_hints = {
-                inline = false,
+                inline = true,
             },
             ast = {
                 --These require codicons (https://github.com/microsoft/vscode-codicons)

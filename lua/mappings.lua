@@ -19,8 +19,6 @@ map('n', 'gr', builtin.lsp_references, { desc = 'Open a telescope window with re
 map('n', ';', ':', { desc = 'CMD enter command mode' })
 map('n', '<leader>c/', '/<Bslash>c', { desc = 'Case-insensitive forward search' })
 map('n', '<leader>c?', '?<Bslash>c', { desc = 'Case-insensitive forward search' })
-
-
 map('n', '<leader>o', 'o<Esc>', { desc = 'Insert line below, stay in normal mode' })
 map('n', '<leader>O', 'O<Esc>', { desc = 'Insert line below, stay in normal mode' })
 map('n', '<leader>bl', ':b#<CR>', { desc = 'Toggle between the most recently used buffer' })
@@ -30,9 +28,14 @@ map('n', '<leader>tf', ':NvimTreeFocus<CR>', { desc = 'Focus on treeview '})
 
 map('n', '<leader>cs', ':ClangdSwitchSourceHeader<CR>', { desc = 'Clangd switch source/header' })
 
+map('n', '<C-j>', '<C-e>', { desc = 'Same as C-e' })
+map('n', '<C-k>', '<C-y>', { desc = 'Same as C-y' })
+map('n', '<C-d>', '<C-b>', { desc = 'Same as C-b' })
+
 local lb = vim.lsp.buf
 map('n', 'gD', function() lb.declaration() end, { desc = 'Go to declaration under cursor' })
 map('n', 'gt', function() lb.type_definition() end, { desc = 'Go to type definition under cursor' })
+map('n', 'gh', function() lb.hover() end, {} )
 
 -- insert mode
 map('i', '<M-b>', '<Esc>bi', { desc = 'Move one word back' })
