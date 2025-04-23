@@ -4,10 +4,13 @@ require "nvchad.options"
 local opt = vim.opt
 local o = vim.o
 
+-- local tabwidth = 3
+local tabwidth = 4
+
 opt.mouse = "" 
-opt.tabstop = 4
+opt.tabstop = tabwidth
 opt.smartindent = false
-opt.shiftwidth = 4
+opt.shiftwidth = tabwidth
 opt.expandtab = true
 
 o.ignorecase = false
