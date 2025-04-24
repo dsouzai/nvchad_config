@@ -31,6 +31,9 @@ return {
             completion = {
                 completeopt = 'menu,menuone,noselect,noinsert',
             },
+            enabled = function()
+                return vim.g.cmp_toggle_flag
+            end
         }
     },
 

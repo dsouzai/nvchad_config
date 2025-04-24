@@ -3,6 +3,8 @@ require 'nvchad.mappings'
 -- add yours here
 local map = vim.keymap.set
 
+map('n', '<leader>tc', require('functions.cmp').toggle_completion, {})
+
 local builtin = require('telescope.builtin')
 map('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
 map('n', '<leader>fg', builtin.git_files, { desc = 'Telescope find git files' })
