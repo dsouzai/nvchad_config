@@ -25,6 +25,16 @@ return {
     },
 
     {
+        'hrsh7th/nvim-cmp',
+        opts = {
+            preselect = require('cmp').PreselectMode.None,
+            completion = {
+                completeopt = 'menu,menuone,noselect,noinsert',
+            },
+        }
+    },
+
+    {
         'p00f/clangd_extensions.nvim',
         lazy = true,
         config = function() end,
