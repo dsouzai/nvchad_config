@@ -65,10 +65,6 @@ return {
     },
 
     {
-        "wuelnerdotexe/vim-enfocado",
-    },
-
-    {
        'rmagatti/auto-session',
        lazy = false,
 
