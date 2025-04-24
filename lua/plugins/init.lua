@@ -15,6 +15,7 @@ return {
         config = function()
             require "configs.lspconfig"
         end,
+        dependencies = { 'p00f/clangd_extensions.nvim' },
     },
 
     {
