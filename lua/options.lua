@@ -7,7 +7,7 @@ local o = vim.o
 -- local tabwidth = 3
 local tabwidth = 4
 
-opt.mouse = "" 
+opt.mouse = ""
 opt.tabstop = tabwidth
 opt.smartindent = false
 opt.shiftwidth = tabwidth
@@ -19,4 +19,4 @@ o.ignorecase = false
 -- opt.guicursor = ""
 
 -- local o = vim.o
--- o.cursorlineopt ='both' -- to enable cursorline!
+o.cursorlineopt ='both' -- to enable cursorline!
