@@ -33,7 +33,21 @@ return {
             },
             enabled = function()
                 return vim.g.cmp_toggle_flag
-            end
+            end,
+            mapping = {
+                ['<CR>'] = function(fallback)
+                    local cmp = require('cmp')
+                    if cmp.visible() then
+                        if cmp.get_selected_entry() then
+                            cmp.confirm()
+                        else
+                            cmp.close()
+                        end
+                    else
+                        fallback()
+                    end
+                end,
+            },
         }
     },
 

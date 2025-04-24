@@ -20,3 +20,5 @@ o.ignorecase = false
 
 -- local o = vim.o
 o.cursorlineopt ='both' -- to enable cursorline!
+
+o.colorcolumn = '80'
