@@ -23,26 +23,25 @@ map('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
 map('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
 
 
--- lsp related
+-- lsp related ; some (eg gd, gD) can be overriden by nv's lspconfig...
 map('n', 'gi', builtin.lsp_incoming_calls, { desc = 'Telescope list incoming calls' })
 map('n', 'go', builtin.lsp_outgoing_calls, { desc = 'Telescope list outgoing calls' })
 map('n', 'gs', builtin.grep_string, { desc = 'Telescope grep string' })
-map('n', 'gt', function() lb.type_definition() end, { desc = 'Go to type definition under cursor' })
-map('n', 'gh', function() lb.hover() end, { desc = 'Show information under cursor in hover paene' })
-
-map('n', '<leader>gd', builtin.lsp_definitions, { desc = 'Go to definition under cursor' })
-map('n', 'gd',
+map('n', 'gr', builtin.lsp_references, { desc = 'Open a telescope window with references' })
+map('n', 'gt', lb.type_definition, { desc = 'Go to type definition under cursor' })
+map('n', 'gh', lb.hover, { desc = 'Show information under cursor in hover paene' })
+map('n', 'gd', lb.definition, { desc = 'Go to definition under cursor' })
+map('n', 'gD', lb.declaration, { desc = 'Go to declaration under cursor' })
+map('n', '<leader>gd',
    function()
-      require('telescope.builtin').lsp_definitions({ jump_type='never' })
+      builtin.lsp_definitions({ jump_type='never' })
    end
    , { desc = 'Preview definition under cursor' })
-map('n', 'gr', builtin.lsp_references, { desc = 'Open a telescope window with references' })
 map('n', '<leader>gD',
    function()
-      require('telescope.builtin').diagnostics({ bufnr= 0})
+      builtin.diagnostics({ bufnr=0})
    end
    , { desc = 'Telescope list diagnostics in current buffer'})
-map('n', 'gD', function() lb.declaration() end, { desc = 'Go to declaration under cursor' })
 
 
 -- treesitter
