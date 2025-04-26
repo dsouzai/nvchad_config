@@ -22,3 +22,5 @@ o.ignorecase = false
 o.cursorlineopt ='both' -- to enable cursorline!
 
 o.colorcolumn = '80'
+
+opt.relativenumber = true
