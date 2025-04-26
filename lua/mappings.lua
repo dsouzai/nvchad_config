@@ -67,7 +67,7 @@ map('n', '<leader>c?', '?<Bslash>c', { desc = 'Case-insensitive forward search' 
 map('n', '<leader>bl', ':b#<CR>', { desc = 'Toggle between the most recently used buffer' })
 map('n', 'J', '<C-e>', { desc = 'Same as C-e' })
 map('n', 'K', '<C-y>', { desc = 'Same as C-y' })
-map('n', '<C-d>', '<C-b>', { desc = 'Same as C-b' })
+--map('n', '<C-d>', '<C-b>', { desc = 'Same as C-b' })
 map('n', '<C-n>', '<tab>', { desc = 'Override TS mapping of C-n' })
 
 
