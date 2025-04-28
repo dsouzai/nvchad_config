@@ -33,15 +33,15 @@ map('n', 'gh', lb.hover, { desc = 'Show information under cursor in hover paene'
 map('n', 'gd', lb.definition, { desc = 'Go to definition under cursor' })
 map('n', 'gD', lb.declaration, { desc = 'Go to declaration under cursor' })
 map('n', '<leader>gd',
-   function()
-      builtin.lsp_definitions({ jump_type='never' })
-   end
-   , { desc = 'Preview definition under cursor' })
+    function()
+        builtin.lsp_definitions({ jump_type='never' })
+    end
+    , { desc = 'Preview definition under cursor' })
 map('n', '<leader>gD',
-   function()
-      builtin.diagnostics({ bufnr=0})
-   end
-   , { desc = 'Telescope list diagnostics in current buffer'})
+    function()
+        builtin.diagnostics({ bufnr=0})
+    end
+    , { desc = 'Telescope list diagnostics in current buffer'})
 
 
 -- treesitter
@@ -69,6 +69,10 @@ map('n', 'J', '<C-e>', { desc = 'Same as C-e' })
 map('n', 'K', '<C-y>', { desc = 'Same as C-y' })
 --map('n', '<C-d>', '<C-b>', { desc = 'Same as C-b' })
 map('n', '<C-n>', '<tab>', { desc = 'Override TS mapping of C-n' })
+map('n', '<C-d>', '<C-d>zz', { desc = '<C-d> but centering the screen' })
+map('n', '<C-u>', '<C-u>zz', { desc = '<C-u> but centering the screen' })
+map('n', 'n', 'nzzzv', { desc = 'n but centering the screen' })
+map('n', 'N', 'Nzzzv', { desc = 'N but centering the screen' })
 
 
 -- misc
@@ -82,6 +86,13 @@ map('n', '<leader>O', 'O<Esc>', { desc = 'Insert line below, stay in normal mode
 
 map('i', '<M-b>', '<Esc>bi', { desc = 'Move one word back' })
 map('i', '<M-f>', '<Esc>lwi', { desc = 'Move one word forward' })
+
+
+------------------------------------------------------------------------------------------
+-- command mode overrides
+
+-- greatest remap ever
+map('x', '<leader>p', '\"_dP', { desc = 'Paste over selection, put selection into void register' })
 
 
 -- map({ 'n', 'i', 'v' }, '<C-s>', '<CMD> w <CR>')

@@ -6,10 +6,10 @@
 local M = {}
 
 M.base46 = {
-    theme = "rxyhn",
+    theme = "catppuccin",
 
     changed_themes = {
-        rxyhn = {
+        catppuccin = {
             base_30 = {
                 darker_black = "#000000",
                 statusline_bg = "#000000",
@@ -17,6 +17,12 @@ M.base46 = {
             base_16 = {
                 base00 = "#000000",
             }
+        },
+    },
+
+    hl_override = {
+        TelescopeNormal = {
+            bg = "#000000"
         },
     },
 
@@ -38,26 +44,29 @@ M.base46 = {
 vim.cmd("highlight St_relativepath guifg=#626a83 guibg=#2a2b36")
 
 local stbufnr = function()
-  return vim.api.nvim_win_get_buf(vim.g.statusline_winid or 0)
+    return vim.api.nvim_win_get_buf(vim.g.statusline_winid or 0)
 end
 
 
 M.ui = {
-  statusline = {
-    theme = "default",
-    order = { "mode", "relativepath", "file", "git", "%=", "lsp_msg", "%=", "diagnostics", "lsp", "cwd", "cursor" },
-    modules = {
-      relativepath = function()
-        local path = vim.api.nvim_buf_get_name(stbufnr())
+    statusline = {
+        theme = "default",
+        order = { "mode", "relativepath", "file", "git", "%=", "lsp_msg", "%=", "diagnostics", "lsp", "cwd", "cursor" },
+        modules = {
+            relativepath = function()
+                local path = vim.api.nvim_buf_get_name(stbufnr())
 
-        if path == "" then
-          return ""
-        end
+                if path == "" then
+                    return ""
+                end
 
-        return "%#St_relativepath#  " .. vim.fn.expand("%:.:h") .. " /"
-      end,
+                return "%#St_relativepath#  " .. vim.fn.expand("%:.:h") .. " /"
+            end,
+        },
     },
-  },
+    telescope = {
+        style = "bordered"
+    }
 }
 
 return M
