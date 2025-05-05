@@ -28,7 +28,6 @@ map('n', 'gi', builtin.lsp_incoming_calls, { desc = 'Telescope list incoming cal
 map('n', 'go', builtin.lsp_outgoing_calls, { desc = 'Telescope list outgoing calls' })
 map('n', 'gs', builtin.grep_string, { desc = 'Telescope grep string' })
 map('n', 'gr', builtin.lsp_references, { desc = 'Open a telescope window with references' })
-map('n', 'gt', lb.type_definition, { desc = 'Go to type definition under cursor' })
 map('n', 'gh', lb.hover, { desc = 'Show information under cursor in hover paene' })
 map('n', 'gd', lb.definition, { desc = 'Go to definition under cursor' })
 map('n', 'gD', lb.declaration, { desc = 'Go to declaration under cursor' })
@@ -79,6 +78,14 @@ map('n', 'N', 'Nzzzv', { desc = 'N but centering the screen' })
 map('n', ';', ':', { desc = 'CMD enter command mode' })
 map('n', '<leader>o', 'o<Esc>', { desc = 'Insert line below, stay in normal mode' })
 map('n', '<leader>O', 'O<Esc>', { desc = 'Insert line below, stay in normal mode' })
+--map('n', '<C-m>', 'zf%za', {})
+
+
+
+vim.keymap.set('n', '[b', '<Plug>(CybuPrev)')
+vim.keymap.set('n', ']b', '<Plug>(CybuNext)')
+vim.keymap.set('n', '<Tab>', '<plug>(CybuLastusedNext)')
+vim.keymap.set('n', '<S-Tab>', '<plug>(CybuLastusedPrev)')
 
 
 ------------------------------------------------------------------------------------------
