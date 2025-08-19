@@ -1,6 +1,6 @@
 require("nvchad.configs.lspconfig").defaults()
 
-local servers = { "clangd", "lua_ls", "glsl_analyzer", "rust_analyzer" }
+local servers = { "clangd", "lua_ls", "glsl_analyzer", "rust_analyzer", "pyright" }
 vim.lsp.config('clangd', {
     cmd = {
         'clangd',
