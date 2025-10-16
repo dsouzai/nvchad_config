@@ -7,12 +7,20 @@ return {
 
     {
         "williamboman/mason-lspconfig.nvim",
+        config = function()
+            -- If Diff mode is selected don't load any LSP Configs
+            if (vim.opt.diff:get()) then return end
+        end,
+
     },
 
     -- These are some examples, uncomment them if you want to see them work!
     {
         "neovim/nvim-lspconfig",
         config = function()
+            -- If Diff mode is selected don't load any LSP Configs
+            if (vim.opt.diff:get()) then return end
+
             require "configs.lspconfig"
         end,
         dependencies = { 'p00f/clangd_extensions.nvim' },
