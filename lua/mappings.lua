@@ -99,10 +99,20 @@ map('i', '<M-f>', '<Esc>lwi', { desc = 'Move one word forward' })
 
 
 ------------------------------------------------------------------------------------------
--- command mode overrides
+-- visual mode overrides
 
 -- greatest remap ever
 map('x', '<leader>p', '\"_dP', { desc = 'Paste over selection, put selection into void register' })
+
+
+------------------------------------------------------------------------------------------
+-- other overrides
+
+-- clipboard mappings; needs xclip
+map('x', '<leader>cy', '\"+y', { desc = 'Yank to clipboard '})
+map('n', '<leader>cy', '\"+y', { desc = 'Yank to clipboard '})
+map('x', '<leader>cp', '\"+p', { desc = 'Paste from clipboard '})
+map('n', '<leader>cp', '\"+p', { desc = 'Paste from clipboard '})
 
 
 -- map({ 'n', 'i', 'v' }, '<C-s>', '<CMD> w <CR>')
