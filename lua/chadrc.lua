@@ -51,7 +51,7 @@ end
 M.ui = {
     statusline = {
         theme = "default",
-        separator_style = "arrow",
+        separator_style = "default",
         order = { "mode", "relativepath", "file", "git", "%=", "lsp_msg", "%=", "diagnostics", "lsp", "cwd", "cursor" },
         modules = {
             relativepath = function()
