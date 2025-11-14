@@ -51,6 +51,7 @@ end
 M.ui = {
     statusline = {
         theme = "default",
+        separator_style = "arrow",
         order = { "mode", "relativepath", "file", "git", "%=", "lsp_msg", "%=", "diagnostics", "lsp", "cwd", "cursor" },
         modules = {
             relativepath = function()
@@ -66,6 +67,9 @@ M.ui = {
     },
     telescope = {
         style = "bordered"
+    },
+    tabufline = {
+        enabled = false
     }
 }
 

@@ -79,6 +79,7 @@ map('n', ';', ':', { desc = 'CMD enter command mode' })
 map('n', '<leader>o', 'o<Esc>', { desc = 'Insert line below, stay in normal mode' })
 map('n', '<leader>O', 'O<Esc>', { desc = 'Insert line below, stay in normal mode' })
 --map('n', '<C-m>', 'zf%za', {})
+map('n', '<leader>x', ':bd<CR>', { desc = 'Close current buffer' })
 
 map('n', ']c', ']czz', { desc = 'Center screen after next change' })
 map('n', '[c', '[czz', { desc = 'Center screen after prev change' })
