@@ -14,6 +14,11 @@ opt.expandtab = true
 
 opt.list = true
 
+opt.relativenumber = true
+
+-- nvchad overrides this causing a massive slowdown in startup
+o.clipboard = ""
+
 o.ignorecase = false
 -- o.smartcase = false
 
@@ -24,4 +29,3 @@ o.cursorlineopt ='both' -- to enable cursorline!
 
 o.colorcolumn = '80'
 
-opt.relativenumber = true
